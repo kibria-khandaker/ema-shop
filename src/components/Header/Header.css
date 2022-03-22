@@ -1,0 +1,16 @@
+.header_section{
+    background-color: rgb(255, 0, 106);
+    margin: 0px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.header_menu a{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 21px;
+}

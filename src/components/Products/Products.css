@@ -1,0 +1,12 @@
+.card_box{
+    border: 0px solid rgba(0,0,0,.125);
+    border-radius:8px;
+    background-color: rgb(245, 245, 245);
+}
+.add_to_cart_btn{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-radius: 0px 0px 8px 8px;
+}
