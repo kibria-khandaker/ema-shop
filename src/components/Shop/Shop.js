@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Products from './../Products/Products';
-import { Button} from 'react-bootstrap';
 import './Shop.css'
+import AddToCart from './../AddToCart/AddToCart';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -20,7 +20,7 @@ const Shop = () => {
 
     return (
         <div className='shop_container'>
-
+            
             <div className='product_container'>
                 {
                     products.map(product=><Products
@@ -30,17 +30,9 @@ const Shop = () => {
                         ></Products>)
                 }
             </div>
+            
             <div className='cart_area'>
-                <h4 className='text-center fw-normal mt-4 mb-5'> Order Summary </h4>
-                <div>
-                    <p> Selected Items: {cart.length} </p>
-                    <p> Total Price: $1140 </p>
-                    <p> Total Shipping Charge: $5 </p>
-                    <p> Tax: $114 </p>
-                    <p> Grand Total: $1559 </p>
-                </div>
-                <Button className='w-100 mb-2' variant="danger"> Clear Cart </Button><br/>
-                <Button className='w-100' variant="warning"> Review Order</Button>
+                <AddToCart cart={cart}></AddToCart>
             </div>
 
         </div>
