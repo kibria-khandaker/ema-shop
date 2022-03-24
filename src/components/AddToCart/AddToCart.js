@@ -6,26 +6,28 @@ import './AddToCart.css'
 
 const AddToCart = (props) => {
     const {cart}=props;
-    console.log('cart' ,cart);
+    // console.log('cart' ,cart);
 
     let total = 0;
     let shipping = 0;
+    let quantity = 0;
     for(const product of cart){
-        total = total + product.price;
+        quantity = quantity + product.quantity
+        total = total + product.price * product.quantity;
         shipping = shipping + product.shipping;
     }
     const tex = parseFloat((total * 0.1).toFixed(2));
-    const grandTotall = total+ shipping +tex ;
+    const grandTotal = total+ shipping +tex ;
 
     return (
         <div className='cart_details_div'>
             <h4 className='text-center fw-normal mt-4 mb-5'> Order Summary </h4>
             <div>
-                <p> Selected Items: {cart.length} </p>
+                <p> Selected Items: {quantity} </p>
                 <p> Total Price: ${total} </p>
                 <p> Total Shipping Charge: ${shipping} </p>
                 <p> Tax: ${tex} </p>
-                <p> Grand Total: ${grandTotall} </p>
+                <p> Grand Total: ${grandTotal} </p>
             </div>
             <Button className='w-100 mb-2' variant="danger"> 
                 Clear Cart <FontAwesomeIcon icon={faTrash} />
@@ -38,3 +40,12 @@ const AddToCart = (props) => {
 };
 
 export default AddToCart;
+
+
+
+
+
+
+
+
+
